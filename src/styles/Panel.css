@@ -18,10 +18,10 @@
   justify-content: space-between;
 }
 .info {
-    position: absolute,
-    zIndex: 10,  
-    right:1,
-    color: #2c3e50;
+  position: absolute;
+  zindex: 10;
+  right: 1;
+  color: #2c3e50;
 }
 
 .info:hover {
@@ -29,7 +29,7 @@
 }
 
 .panel.selected {
-  background-color: #8fcaca; 
+  background-color: #8fcaca;
   border-color: #00796b;
 }
 
