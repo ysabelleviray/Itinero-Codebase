@@ -109,6 +109,8 @@ const Footer = ({ cardClicked }) => {
     const doc = new jsPDF();
     doc.setFontSize(12);
 
+    let y = 10; // Initial vertical position
+
     panels.forEach((panel, index) => {
       const panelData = panelContent[index] || [];
       const tableData = panelData.map((place) => [
@@ -117,12 +119,27 @@ const Footer = ({ cardClicked }) => {
         place.phone,
       ]);
 
-      doc.text(`Date: ${panel.date} (${panel.dayOfWeek})`, 10, 10 + index * 10);
+      // Add the Date and Day header
+      doc.setFontSize(12);
+      doc.text(`Date: ${panel.date} (${panel.dayOfWeek})`, 10, y);
+      y += 10; // Move down for the table
+
+      // Add the table
       doc.autoTable({
-        startY: 20 + index * 10,
+        startY: y,
         head: [["Place", "Address", "Phone"]],
         body: tableData,
+        margin: { left: 10, right: 10 },
       });
+
+      // Update y position for the next section
+      y = doc.autoTable.previous.finalY + 10; // Add some space after the table
+
+      // If the y position is too close to the bottom, add a new page
+      if (y > doc.internal.pageSize.height - 20) {
+        doc.addPage();
+        y = 10; // Reset y position for new page
+      }
     });
 
     doc.save("itinerary.pdf");

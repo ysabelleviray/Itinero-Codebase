@@ -58,12 +58,16 @@ const PlaceCard = ({ place, selected, refProp, setCardClicked }) => {
             Website
           </Button>
           <IconButton
-            color="primary"
             onClick={() => setCardClicked(place)}
             size="small"
-            sx={{ backgroundColor: "#34495e" }}
+            sx={{
+              backgroundColor: "#34495e",
+              "&:hover": {
+                backgroundColor: "#8fcaca",
+              },
+            }}
           >
-            <AddIcon style={{ color: "white" }} />
+            <AddIcon className="add-icon" />
           </IconButton>
         </div>
       </div>
