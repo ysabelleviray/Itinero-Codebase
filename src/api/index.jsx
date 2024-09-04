@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export const getPlacesData = async (type, sw, ne) => {
+  console.log(process.env.REACT_APP_RAPIDAPI_KEY);
+
   try {
     const {
       data: { data },
