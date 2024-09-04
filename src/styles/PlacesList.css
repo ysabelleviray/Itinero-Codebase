@@ -1,0 +1,20 @@
+.places-list {
+  background-color: #f4f4f4;
+  width: 28%; /* Make the list full-width */
+  height: 450px; /* Set a fixed height for the list */
+  margin: 20px 0;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Make the list scrollable */
+  padding: 16px; /* Add some padding to the container */
+}
+
+.places-list .grid {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  align-items: stretch; /* Make the cards full-width */
+}
+
+.places-list .grid > * {
+  margin-bottom: 16px; /* Add some spacing between cards */
+}

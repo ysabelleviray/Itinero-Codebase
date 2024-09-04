@@ -1,0 +1,10 @@
+/* styles.css */
+.app {
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  display: flex;
+  margin: 5px 15px 5px 15px;
+  justify-content: space-between;
+}

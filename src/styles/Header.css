@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+  background-color: #f9f9f9; /* Off White - Soft and unobtrusive background */
+  color: #34495e; /* Slate Gray - Readable text color */
+  font-family: "Roboto", sans-serif; /* Clean and modern font */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  background-color: #2c3e50; /* Deep Blue Gray - Professional and calm */
+  color: #ecf0f1; /* Light Gray - Clean and simple */
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header-date-form,
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #aaa;
+}
+
+.header-search-form input {
+  width: 100%;
+  padding: 5px 40px; /* Add padding to make space for the icon */
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+button {
+  background-color: #e74c3c; /* Bright Red - Vibrant and attention-grabbing */
+  color: #ecf0f1; /* Light Gray text color */
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #c0392b; /* Darker Red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .map-container {
+    height: 400px;
+  }
+}

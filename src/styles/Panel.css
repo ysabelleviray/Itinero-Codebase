@@ -1,0 +1,50 @@
+/* Panel.css */
+.panel {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s, border-color 0.3s;
+  width: 223px;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+}
+.info {
+    position: absolute,
+    zIndex: 10,  
+    right:1,
+    color: #2c3e50;
+}
+
+.info:hover {
+  color: #3498db;
+}
+
+.panel.selected {
+  background-color: #8fcaca; 
+  border-color: #00796b;
+}
+
+.panel-day {
+  font-weight: bold;
+}
+
+.panel-date {
+  font-style: italic;
+}
+
+.panel-body {
+  margin-top: 10px;
+}
+
+.panel-item {
+  margin: 5px 0;
+}

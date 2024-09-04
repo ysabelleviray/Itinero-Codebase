@@ -1,0 +1,42 @@
+/* Map Container Styles */
+.map-container {
+  /* position: relative; */
+  width: 68%;
+  height: 480px; /* Adjust height as needed */
+  margin: 20px 0;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  overflow: hidden;
+}
+
+.markerContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.markerContainer:hover {
+  z-index: 2;
+}
+
+.paper {
+    padding: 10px, display: flex, flexDirection: column, justifyContent: center, width: 100px 
+}
+
+.pointer {
+  cursor: "pointer";
+}
+
+,
+
+/* Adjust map styles based on screen size */
+@media (max-width: 768px) {
+  .map-container {
+    height: 400px; /* Reduce height for smaller screens */
+  }
+}
+
+/* Optional: Add custom styles for map controls or markers if needed */
+.map-container .gm-style {
+  border-radius: 8px; /* Apply border radius to map controls */
+}

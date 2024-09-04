@@ -1,0 +1,50 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0",
+    "@react-google-maps/api": "2.19.3",
+    "axios": "1.7.5",
+    "react-beautiful-dnd": "13.1.1",
+    "@fortawesome/react-fontawesome": "0.2.2",
+    "@fortawesome/fontawesome-svg-core": "6.6.0",
+    "@fortawesome/free-solid-svg-icons": "6.6.0",
+    "google-map-react": "2.2.1",
+    "@material-ui/icons": "4.11.3",
+    "@material-ui/core": "4.12.4",
+    "@material-ui/lab": "4.0.0-alpha.61",
+    "@mui/icons-material": "6.0.1",
+    "@mui/material": "6.0.1",
+    "@emotion/styled": "11.13.0",
+    "@emotion/react": "11.13.3",
+    "@vis.gl/react-google-maps": "1.1.1",
+    "google-maps-react-markers": "2.0.11",
+    "react-dnd": "16.0.1",
+    "react-dnd-html5-backend": "16.0.1",
+    "@dnd-kit/core": "6.1.0",
+    "@dnd-kit/sortable": "8.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.38",
+    "@types/react-dom": "18.2.15",
+    "loader-utils": "3.2.1",
+    "typescript": "4.4.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
