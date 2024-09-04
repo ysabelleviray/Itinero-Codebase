@@ -1,8 +1,9 @@
-// Footer.js
 import React, { useState, useEffect } from "react";
-import Panel from "./Panel"; // Import the Panel component
+import Panel from "./Panel";
 import PanelDetailsModal from "./PanelDetailsModal";
-import "../styles/Footer.css"; // Import the corresponding CSS file
+import "../styles/Footer.css";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const Footer = ({ cardClicked }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -104,6 +105,29 @@ const Footer = ({ cardClicked }) => {
     }));
   };
 
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(12);
+
+    panels.forEach((panel, index) => {
+      const panelData = panelContent[index] || [];
+      const tableData = panelData.map((place) => [
+        place.name,
+        place.address,
+        place.phone,
+      ]);
+
+      doc.text(`Date: ${panel.date} (${panel.dayOfWeek})`, 10, 10 + index * 10);
+      doc.autoTable({
+        startY: 20 + index * 10,
+        head: [["Place", "Address", "Phone"]],
+        body: tableData,
+      });
+    });
+
+    doc.save("itinerary.pdf");
+  };
+
   return (
     <div className="footer">
       <div className="footer-content">
@@ -128,22 +152,33 @@ const Footer = ({ cardClicked }) => {
           onUpdatePanelContent={handleUpdatePanelContent}
         />
         <div className="date-input-container">
-          <label htmlFor="date-from">From:</label>
-          <input
-            type="date"
-            id="date-from"
-            name="date-from"
-            value={startDate.toISOString().split("T")[0]}
-            onChange={handleDateChange}
-          />
-          <label htmlFor="date-to">To:</label>
-          <input
-            type="date"
-            id="date-to"
-            name="date-to"
-            value={endDate.toISOString().split("T")[0]}
-            onChange={handleDateChange}
-          />
+          <div className="from-date">
+            <label className="label" htmlFor="date-from">
+              From:
+            </label>
+            <input
+              type="date"
+              id="date-from"
+              name="date-from"
+              value={startDate.toISOString().split("T")[0]}
+              onChange={handleDateChange}
+            />
+          </div>
+          <div className="to-date">
+            <label className="label" htmlFor="date-to">
+              To:
+            </label>
+            <input
+              type="date"
+              id="date-to"
+              name="date-to"
+              value={endDate.toISOString().split("T")[0]}
+              onChange={handleDateChange}
+            />
+          </div>
+          <button onClick={downloadPDF} className="download-button">
+            <span className="material-icons">file_download</span>
+          </button>
         </div>
       </div>
     </div>

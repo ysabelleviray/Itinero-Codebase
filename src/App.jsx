@@ -10,7 +10,7 @@ import "./styles.css";
 const App = () => {
   const [places, setPlaces] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
-  const [type, setType] = useState("hotels");
+  const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState(0);
   const [coordinates, setCoordinates] = useState({});
   const [childClicked, setChildClicked] = useState(null);

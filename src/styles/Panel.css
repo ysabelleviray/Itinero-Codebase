@@ -25,7 +25,8 @@
 }
 
 .info:hover {
-  color: #3498db;
+  background-color: #8fcaca;
+  color: black;
 }
 
 .panel.selected {

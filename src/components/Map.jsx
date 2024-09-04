@@ -74,7 +74,7 @@ const Map = ({
   return (
     <div className="map-container">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.GOOGLEMAPS_KEY }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLEMAPS_KEY }}
         // Replace with your actual API key
         yesIWantToUseGoogleMapApiInternals
         onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
