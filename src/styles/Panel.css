@@ -18,9 +18,9 @@
   justify-content: space-between;
 }
 .info {
-  position: absolute;
+  /* position: absolute;
   z-index: 10;
-  right: 1;
+  right: 1; */
   color: #2c3e50;
 }
 
